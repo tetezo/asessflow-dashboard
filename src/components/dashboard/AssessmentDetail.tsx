@@ -1,8 +1,8 @@
 import type { Assessment } from "@/types/types";
-import { Sheet, SheetContent, SheetFooter, SheetHeader } from "../ui/sheet";
-import { Calendar, Dot, Download, IdCard, SquarePen } from "lucide-react";
+import { Sheet, SheetClose, SheetContent, SheetFooter } from "@/components/ui/sheet";
+import { Calendar, Dot, Download, IdCard, SquarePen, X } from "lucide-react";
 import { cn, formatDate, getScoreColors, getStatusColors, getStatusLabel } from "@/lib/utils";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 export function AssessmentDetail({
     open,
@@ -23,18 +23,39 @@ export function AssessmentDetail({
     const scoreColors = assessment.score
         ? getScoreColors(assessment.score)
         : null
-
+console.log("assesmenttt")
   return (
     <Sheet
         open={open}
         onOpenChange={onOpenChange}
     >
-        <SheetContent>
-            <SheetHeader>
+        <SheetContent
+            onOpenAutoFocus={(e) => e.preventDefault()}
+        >
+            
+            <div className=" flex items-center justify-between py-5 px-6 border-b border-gray-200">
                 <h2 className="text-[18px] text-start font-semibold text-gray-900">
                     Assessment Details
                 </h2>
-            </SheetHeader>
+                <SheetClose asChild>
+                    <Button
+                    variant={"btnClose"}
+                    size={"closeBtn"}
+                    aria-label="Close"
+                    onClick={() => onOpenChange(false)}
+                >
+                    <X size={20} />
+                </Button>
+
+                </SheetClose>
+{/*                 <Button
+                    className="text-black bg-blue-300"
+                    aria-label="Close"
+                    onClick={() => onOpenChange(false)}
+                >
+                    <X className="w-8 h-8" />
+                </Button> */}
+            </div>
 
             <div className="overflow-y-auto p-6">
                 <div className="flex items-center gap-4 pb-6 border-b border-b-gray-200 mb-6">

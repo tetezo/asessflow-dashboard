@@ -91,7 +91,9 @@ export function Dashboard() {
                 <h1 className='text-2xl md:text-[28px] font-bold text-gray-900 tracking-[-0.02em] leading-normal'>Assessments</h1>
                 <p className='text-sm text-gray-500'>Manage and review patient psychological assessments</p>
             </div>
-            <Button variant={'btnBlue'}>
+            <Button
+              variant={'btnBlue'}
+            >
                 <Plus size={16} />
                 New Assessment
             </Button>

@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-150 ease-in-out disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-all duration-150 ease-in-out cursor-pointer focus-visible:ring-0 focus-visible:ring-offset-0",
   {
     variants: {
       variant: {
@@ -20,16 +20,20 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
 
-        btnBlue: "py-2.5 px-4.5 bg-primary-600 text-white text-sm font-medium border-none rounded-md cursor-pointer shadow-sm hover:bg-primary-700 hover:shadow-md transition-all duration-150 ease-in-out",
-        btnWhite: "flex items-center gap-2 py-2.25 px-3 text-sm font-medium border border-gray-300 rounded-md bg-white text-gray-700 cursor-pointer hover:border-gray-400 transition-all duration-150 ease-in-out",
-        paginationBtn: "flex items-center justify-center w-8 h-8 border border-gray-300 bg-white rounded-md text-gray-700 text-sm font-medium cursor-pointer transition-all duration-150 ease-in-out",
-        paginationActive: "flex items-center justify-center w-8 h-8 border border-primary-600 bg-primary-600 rounded-md text-white text-sm font-medium cursor-pointer transition-all duration-150 ease-in-out",
+        btnBlue: "py-2.5 px-4.5 bg-primary-600 text-white text-sm font-medium border-none rounded-md shadow-sm hover:bg-primary-700 hover:shadow-md",
+        btnWhite: "py-2.25 px-3 text-sm font-medium border border-gray-300 rounded-md bg-white text-gray-700 cursor-pointer hover:border-gray-400",
+        btnClose: "mr-2 border-none bg-transparent text-gray-500 rounded-md hover:bg-gray-100 hover:text-gray-700 focus-visible:ring-0 focus-visible:ring-offset-0",
+
+        paginationBtn: "w-8 h-8 border border-gray-300 bg-white rounded-md text-gray-700 text-sm font-medium [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+        paginationActive: "w-8 h-8 border border-primary-600 bg-primary-600 rounded-md text-white text-sm font-medium [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        closeBtn: "w-9 h-9 focus-visible:ring-0 focus-visible:ring-offset-0",
       },
     },
     defaultVariants: {

@@ -1,7 +1,6 @@
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -29,7 +28,7 @@ const SheetOverlay = React.forwardRef<
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
 
 const sheetVariants = cva(
-  "fixed z-51 bottom-0 bg-background flex flex-col overflow-y-auto w-full md:w-120 md:max-w-full shadow-xl transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out",
+  "fixed z-51 bg-background flex flex-col w-full md:w-120 md:max-w-full shadow-xl transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out",
   {
     variants: {
       side: {
@@ -62,10 +61,6 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
-      <SheetPrimitive.Close className="absolute w-9 h-9 flex items-center justify-center right-6 top-5 border-none text-gray-500 rounded-md cursor-pointer hover:bg-gray-100 hover:text-gray-700 transition-all duration-150 ease-in-out">
-        <X className="h-5 w-5" />
-        <span className="sr-only">Close</span>
-      </SheetPrimitive.Close>
       {children}
     </SheetPrimitive.Content>
   </SheetPortal>
@@ -78,7 +73,7 @@ const SheetHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-row py-5 px-6 border-b border-b-gray-200",
+      "flex flex-col space-y-2 text-center sm:text-left",
       className
     )}
     {...props}
