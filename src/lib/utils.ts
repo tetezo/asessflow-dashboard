@@ -11,7 +11,7 @@ import type {
   ScoreRange, 
   AssessmentStatus 
 } from '@/types/types';
-import type { StatsCardProps, StatsIconColor } from '@/types/types';
+import type { StatsIconColor } from '@/types/types';
 
 // ============================================
 // Score Utilities
