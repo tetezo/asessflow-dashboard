@@ -22,6 +22,25 @@ npm run dev
 - Fully responsive layout (mobile-first)
 
 
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── ui/              # shadcn/ui components
+│   ├── layout/          # Layout and header
+│   └── dashboard/       # Dashboard-specific components
+│       ├── StatsCard.tsx
+│       ├── FilterBar.tsx
+│       ├── AssessmentTable.tsx
+│       ├── AssessmentCard.tsx
+│       ├── AssessmentDetail.tsx
+│       └── Pagination.tsx
+├── data/                # Mock data
+├── lib/                 # Utility functions
+├── types/               # TypeScript types
+└── App.tsx
+```
 
 ## Notes 
 
